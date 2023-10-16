@@ -12,12 +12,13 @@ import javax.persistence.Table;
 @Table(name = "USERS")
 public class User {
 
-	@Id
-	@SequenceGenerator(name = "USER_ID_GENERATOR", sequenceName = "USER_ID_SEQ", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_ID_GENERATOR")
-	@Column(name = "ID")
-	private Integer id;
-	
+
+    @Id
+    @SequenceGenerator(name = "USER_ID_GENERATOR", sequenceName = "USER_ID_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_ID_GENERATOR")
+    @Column(name = "ID") // IDフィールドとしてマッピング
+    private Integer id;
+    
 	@Column(name = "NAME")
 	private String name;
 	
@@ -26,10 +27,10 @@ public class User {
 	
 	@Column(name = "PASSWORD")
 	private String password;
-	
+
 	public Integer getId() {
-		return this.id;
-	}
+        return this.id;
+    }
 	
 	public String getName() {
 		return this.name;
@@ -43,6 +44,7 @@ public class User {
 		return this.password;
 	}
 	
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -58,4 +60,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
 }
