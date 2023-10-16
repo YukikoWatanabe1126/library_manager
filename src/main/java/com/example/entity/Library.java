@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "LIBRARYS")
+@Table(name = "LIBRARES") 
 public class Library {
 
     @Id
@@ -21,20 +21,13 @@ public class Library {
     @Column(name = "NAME")
     private String name;
     
-    @Column(name = "USER_ID")
-    private Integer userid;
+   
 
     public Integer getId() {
         return this.id;
     }
     
-    public Integer getUserId() {
-    	return this.userid;
-    }
     
-    public void setUserId(Integer userId) {
-    	this.userid = userId;
-    }
 
     public void setId(Integer id) {
         this.id = id;

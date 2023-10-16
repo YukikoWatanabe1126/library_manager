@@ -28,7 +28,6 @@ public class LibraryController {
         model.addAttribute("libraries", libraries);
         return "library/index";
     }
-    
-    
+   
 }
 

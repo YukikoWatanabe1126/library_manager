@@ -44,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	        .loginPage("/loginForm") // ログインページの指定
 	        .usernameParameter("email") // ログインページのメールアドレス
 	        .passwordParameter("password") // ログインページのパスワード
-	        .defaultSuccessUrl("/home", true) // ログイン成功後のパス
+	        .defaultSuccessUrl("/library", true) // ログイン成功後のパス
 	        .failureUrl("/loginForm?error"); // ログイン失敗時のパス
 		 
 		 http.logout()
