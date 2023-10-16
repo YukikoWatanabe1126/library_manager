@@ -19,12 +19,11 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="header">
-                            <h4 class="title" th:text="${library.title}">Borrow book data</h4>
+                            <h4 class="title">Borrow book data</h4>
                         </div>
                         <div class="content">
-                            <form action="@{/library/borrow}" method="post">
-                                <div class="book-title">
-                                    Javascriptパターン　優れたアプリケーションのための作法
+                            <form action="/library/borrow" method="post">
+                                <div class="book-title" th:text="${library.name}"></div>
                                 </div>
                                 <hr>
                                 <div class="form-group">
@@ -37,7 +36,6 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </form>
-                             <a th:href="@{/library}" class="btn btn-primary btn-fill btn-wd">一覧へ戻る</a>
                         </div>
                     </div>
                 </div>

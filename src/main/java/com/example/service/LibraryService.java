@@ -23,7 +23,7 @@ public class LibraryService {
         return this.libraryRepository.findAll();
     }
     
-    public Library findLibrary(Integer Libraryid) {
+    public Library findById(Integer Libraryid) {
     	Optional<Library> optionalLibrary = this.libraryRepository.findById(Libraryid);
     	Library library = optionalLibrary.get();
     	return library;
