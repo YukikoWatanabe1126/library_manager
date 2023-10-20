@@ -28,5 +28,11 @@ public class LibraryService {
     	Library library = optionalLibrary.get();
     	return library;
     }
+    
+    public Library upDate(Library library) {
+    	return this.libraryRepository.save(library);
+    }
+    
+    
 
 }

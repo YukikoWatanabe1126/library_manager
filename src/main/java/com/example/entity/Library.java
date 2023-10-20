@@ -60,5 +60,10 @@ public class Library {
 	public List<Log> getLogs(){
 		return this.logs;
 	}
+
+	public static void setLibrary(Library library) {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 	
 }
