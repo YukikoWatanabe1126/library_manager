@@ -33,6 +33,12 @@
                             <tr th:each="library : ${libraries}">
                                 <td th:text="${library.id}"></td>
                                 <td th:text="${library.name}"></td>
+                                <td>
+									<form action="/library/borrow" method="get">
+                                        <input type="hidden" name="id" th:value="${library.id}">
+                                        <input type="submit" class="btn btn-info" value="borrow">
+                                    </form>
+                                </td>
                             </tr>
                             </tbody>
                         </table>
