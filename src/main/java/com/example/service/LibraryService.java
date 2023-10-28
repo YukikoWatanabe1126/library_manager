@@ -29,7 +29,7 @@ public class LibraryService {
     	return library;
     }
     
-    public Library upDate(Library library) {
+    public Library update(Library library) {
     	return this.libraryRepository.save(library);
     }
     

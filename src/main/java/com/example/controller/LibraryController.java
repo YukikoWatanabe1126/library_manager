@@ -24,10 +24,12 @@ import com.example.service.LoginUser;
 public class LibraryController {
 
     private final LibraryService libraryService;
+    private final LogService logService;
 
     @Autowired
-    public LibraryController(LibraryService libraryService) {
+    public LibraryController(LibraryService libraryService, LogService logService) {
         this.libraryService = libraryService;
+        this.logService = logService;
     }
 
     @GetMapping
@@ -45,20 +47,19 @@ public class LibraryController {
     }
     
     @PostMapping("/borrow")
-    public String borrow(@RequestParam("id") Integer id, @RequestParam("return_due_date") String returnDueDate, @AuthenticationPrincipal LoginUser loginUser, LogService logService) {
+    public String borrow(@RequestParam("id") Integer id, @RequestParam("return_due_date") String returnDueDate, @AuthenticationPrincipal LoginUser loginUser) {
     	Library library = this.libraryService.findById(id);
     	library.setUserId(loginUser.getUser().getId());
-    	libraryService.upDate(library);
+    	libraryService.update(library);
     	
     	Log log = new Log();
-    	log.setId(id);
+    	log.setLibraryId(id);
     	log.setUserId(loginUser.getUser().getId());
     	log.setRentDate(LocalDateTime.now());
+    	DateTimeFormatter format = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss");
+    	log.setReturnDueDate(LocalDateTime.parse(returnDueDate, format));
     	log.setReturnDate(null);
-    	DateTimeFormatter fomatter = DateTimeFormatter.ofPattern("yy-MM-dd HH:mm:ss");
-    	log.setRentDate(LocalDateTime.parse(returnDueDate +"00:00:00", fomatter));
-    	log.setReturnDate(null);
-		logService.create(log);
+    	this.logService.create(log);
     	return "redirect:/library";
     }
 }

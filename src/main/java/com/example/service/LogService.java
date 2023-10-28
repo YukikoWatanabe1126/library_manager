@@ -19,4 +19,8 @@ public class LogService {
     public Log create(Log log) {
         return this.logRepository.save(log);
     }
+    
+    public Log save(Log log) {
+    	return this.logRepository.save(log);
+    }
 }

@@ -16,6 +16,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "USERS")
 public class User {
+	
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name = "USER_ID_GENERATOR", sequenceName = "USER_ID_SEQ", allocationSize = 1)

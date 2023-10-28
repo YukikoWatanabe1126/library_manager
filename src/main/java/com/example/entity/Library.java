@@ -61,9 +61,6 @@ public class Library {
 		return this.logs;
 	}
 
-	public static void setLibrary(Library library) {
-		// TODO 自動生成されたメソッド・スタブ
-		
-	}
+	
 	
 }
