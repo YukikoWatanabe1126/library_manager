@@ -101,4 +101,6 @@ public class Log {
     public User getUser() {
     	return this.user;
     }
+    
+    
 }
